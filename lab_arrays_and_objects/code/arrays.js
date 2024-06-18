@@ -17,7 +17,7 @@ stations.push("London Kings Cross");
  * Q2.
  * It doesn't go as far as Dundee either, so remove it from the start of the array.
  */
-stations.shift("Dundee");
+stations.shift("Dundee"); //shift removes from the start, pop removes from the end 
 // console.log(stations);
 
 
@@ -50,6 +50,11 @@ thirdStation = stations[2];
  */
 
 stations[1] = "Berwick-upon-Tweed"
+
+// if we didnt know the index of Berwick:
+// berwickIndex = stations.indexOf('North Berwick')
+// stations[berwickIndex] = "Berwick-upon-Tweed"
+
 // console.log(stations);
 
 
@@ -58,7 +63,11 @@ stations[1] = "Berwick-upon-Tweed"
  * Q6.
  * How did Leeds get on there? Better remove it.
  */
-// stations.pop[4];
+
+const indexOfLeeds = stations.indexOf('Leeds');
+stations.splice(indexOfLeeds, 1);
+//two arguments in splice: one is the index that you want to splice and the number of indexes you want to remove
+
 // console.log(stations);
 
 
@@ -67,8 +76,10 @@ stations[1] = "Berwick-upon-Tweed"
  * Q7.
  * We forgot about Darlington! Add it to the route between Newcastle and York.
  */
-stations.splice(0, 3, "Darlington")
-console.log(stations);
+
+const indexOfYork = stations.indexOf('York');
+stations.splice(indexOfYork, 0, "Darlington");
+// console.log(stations);
 
 
 
@@ -77,8 +88,7 @@ console.log(stations);
  * Is Durham one of the stops?
  */
 
-stoppingAtDurham = null;
-
+stoppingAtDurham = stations.includes("Durham");
 // console.log(stoppingAtDurham);
 
 
@@ -86,3 +96,9 @@ stoppingAtDurham = null;
  * Q9.
  * If we are stopping at Durham, print "Yay Durham!" to the terminal. If not print "Aww...".
  */
+
+if (stoppingAtDurham === true) { // no need to have three equal signs here
+    console.log("Yay Durham!");
+} else {
+    console.log("Aww...");
+}
