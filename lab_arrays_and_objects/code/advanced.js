@@ -57,6 +57,6 @@ northernIrelandKeys = Object.keys(northernIreland);
 
 if (scotland.population < wales.population) {
   console.log("Scotland has a lower population");
-} else (scotland.population > wales.population) {
+} else if (scotland.population > wales.population){
   console.log("Wales has a lower population");
 }
